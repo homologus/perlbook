@@ -1,0 +1,16 @@
+# The Shared History of PERL and Python
+
+The year 1969 was pivotal in the history of computing. Later that year Ken Thompson and Dennis Ritchie released the first version of the UNIX operating system.  The eventual births of scripting languages like PERL and Python two decades later were related to that event.
+
+UNIX was the first operating system written almost entirely in a high-level language (C).  Previously, operating systems were developed in machine-dependent assembly languages and therefore could not be ported to different types of computers. In contrast, the C-version of UNIX, released in 1973, could be ported easily to all kinds of computing hardware, and that made UNIX the most popular operating system. As a side effect, C also became the primary language for computing.
+
+The concept of scripting originated from the UNIX world. Scripts were short informal programs, which did not need to be compiled unlike the C programs. Often they were used to search rapidly for patterns in the text files. UNIX developers not only included software tools like AWK to facilitate scripting, but also built another immensely helpful feature for approximate pattern search - regular expressions (regex).  Ken Thompson initially added this capability to the UNIX editor 'ed'. However, regexes turned out to be  so useful that they eventually got adopted into many popular UNIX tools.
+
+PERL language was created (1987) by Larry Wall to bring the capabilities of various UNIX-related scripting tools in one place and also give the scripts C-like syntax. Right when the internet boom needed a language for efficient parsing of web documents (1994), PERL was ready with a matured release including regular expressions. For almost identical reasons, PERL became popular among the bioinformaticians in the 1990s and early 2000s. 
+
+While PERL was created to give C-like structure to the UNIX scripts, Python was developed by Guido van Rossum (late 1980s) to have a simplify C and make it ready for scripting. Therefore, two languages attempted to accomplish almost the same objectives coming from two ends. Python took longer than PERL to mature, but its simpler syntax made it a favorite among the bioinformaticians since the mid-2000s.  This created inconveniences for some of the earlier researchers trained in PERL, because they increasingly need to use Python to access shared public repositories or share codes with others.
+
+Here is the good news. Although, from a cursory look, the codes written in those two languages appear as different as English and Chinese, they are actually way closer than English and French.  In fact, the two languages are as comparable as British and American English. By knowing how to convert a few major differences, a PERL programmer can easily translate codes to Python.
+
+This book will make your transition easy by showing what those major differences are in the next chapter.
+

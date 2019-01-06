@@ -1,0 +1,42 @@
+# Numbers and Variables
+
+A> ## In a nutshell
+A>
+A> Unlike PERL, Python does not use '$', '%' and '@' in front of names of variables.
+
+
+Apart from '$', '%' and '@' symbols in front of the names, PERL and Python variables are named in the same way. Here are two equivalent PERL and Python programs -
+
+~~~~~~~~
+$x=10;
+$y=2*$x;
+print "$y\n";
+$y=$y+1;
+print "$y\n";	
+~~~~~~~~
+
+
+~~~~~~~~
+x=10
+y=2*x
+print y
+y=y+1
+print y	
+~~~~~~~~
+
+
+Apart from the steps listed in the previous chapter, there are no differences between the two programs.
+
+We also note that the mathematical operators are identical in PERL and Python. They are shown in the following table.
+
+
+| Operator   | Action   |
+|-----------|----------|
+| + |  Addition    |
+| - |  Subtraction    |
+| * |  Multiplication    |
+| / |  Division    |
+| % |  Remainder    |
+| ** |  Power    |
+
+

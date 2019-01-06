@@ -1,0 +1,256 @@
+# Another Look at Python
+
+
+A> ## In a nutshell
+A>
+
+Now that you know how to convert PERL programs into Python, let us look at Python from the new programmers' viewpoint. These discussions highlight what is new in Python.
+
+
+
+## Python Keywords are Special Words
+
+
+| Keyword   | Action   |
+|-----------|----------|
+| **print** |  prints text on screen    |
+| **and**   |  logical 'and' |
+| **or**    |  logical 'or' |
+| **not**   |  logical 'not' |
+| **True**|  logical True    |
+| **False**|  logical False    |
+| **is**   |  tests equality |
+| **in**   | checks if an element is in a list  or dictionary|
+| **del**   | deletes an element from a list or dictionary |
+| **if, else, elif**    | conditional statement |
+| **while** | conditinal loop |
+| **for**   | loop |
+| **continue** | skips current execution of loop |
+| **break** | quits the loop prematurely |
+| **def**   |  defines new function    |
+| **return**|  returns value at the end of function    |
+| **from, import**|  imports functions from file   |
+
+
+
+### Special words cannot be used as names
+
+You cannot name variables (or functions) with these special words.
+
+Wrong code -
+~~~~~~~~~
+for = 1
+in = 2
+print for + in
+~~~~~~~~~
+
+
+### Reserved Words
+
+
+print
+
+and, or, not
+
+if, else, elif
+
+while, for, continue, break, in
+
+def, return
+import, from, as
+
+with, as (file)
+
+in (list)
+
+del (delete dictionary item, list item)
+
+exec (shell command)
+
+------------
+
+global,  with, assert, pass, yield
+except, class, raise, finally
+is, lambda, try
+
+
+
+
+and       del       from      not       while
+as        elif      global    or        with
+assert    else      if        pass      yield
+break     except    import    print
+class     exec      in        raise
+continue  finally   is        return
+def       for       lambda    try
+
+
+
+
+## Built-in Functions in Python
+
+
+### Function - range()
+
+The function **range** creates a list of integers.
+
+~~~~~
+print range(3)
+~~~~~
+
+~~~~~
+print range(1,5)
+~~~~~
+
+~~~~~
+print range(1,5,2)
+~~~~~
+
+
+### Function - len()
+
+~~~~~~~
+x=range(9,2,-2)
+print len(x)
+~~~~~~~
+
+In the following code, the variable i goes from 0 to 3,
+because len(a)=4.
+
+~~~~~
+a=[0,1,2,3]
+print "loop using list indices"
+for i in range(len(a)):
+        print i,"a[i]+8=",a[i]+8
+~~~~~
+
+
+
+
+### Function - float()
+
+~~~~~~
+x=1
+y=float(x)
+print x,y
+~~~~~~
+
+The function float converts an integer to a floating point number.
+
+
+### Function - int()
+
+~~~~~~
+x=1.7
+y=int(x)
+print x,y
+~~~~~~
+
+The function int gives the integer part of a floating point number.
+
+### Function - str()
+
+~~~~~~
+x=723
+y=str(x)
+print y[0]
+~~~~~~
+
+The function str convers a number into a string.
+
+
+
+### All Built-in Functions
+
+Python language includes 68 built-in functions.
+
+| Name  | Action   |
+|-----------|----------|
+| help() | Invoke the built-in help system. |
+| ** Number-related ** |  |
+| abs() | Return the absolute value of a number. |
+| pow() | Return power raised to a number. |
+| round() | Return the rounded floating point value. |
+| divmod() | Return a pair of numbers consisting of quotient and remainder when using integer division. |
+| ** Creates Objects ** | |
+| ascii() | Return a string containing a printable representation of an object, but escape the non-ASCII characters. |
+| bytearray() | Return a new array of bytes. |
+| bytes() | Return a new "bytes" object. |
+| chr() | Return the string representing a character. |
+| complex() | Create a complex number or convert a string or number to a complex number. |
+| dict() | Create a new dictionary. |
+| enumerate() | Return an enumerate object. |
+| frozenset() | Return a new frozenset object. |
+| hash() | Return the hash value of the object. |
+| id() | Return the "identity" of an object. |
+| iter() | Return an iterator object. |
+| list() | Return a list. |
+| memoryview() | Return a "memory view" object created from the given argument. |
+| object() | Return a new featureless object. |
+| repr() | Return a string containing a printable representation of an object. |
+| str() | Return a str version of object. |
+| set() | Return a new set object. |
+| slice() | Return a slice object. |
+| tuple() | Return a tuple |
+| type() | Return the type of an object. |
+| **Converts** | |
+| bin() | Convert an integer number to a binary string. |
+| bool() | Convert a value to a Boolean. |
+| float() | Convert a string or a number to floating point. |
+| format() | Convert a value to a "formatted" representation. |
+| hex() | Convert an integer number to a hexadecimal string. |
+| int() | Convert a number or string to an integer. |
+| oct() | Convert an integer number to an octal string. |
+| ord() | Return an integer representing the Unicode. |
+| ** List operations ** | |
+| len() | Return the length (the number of items) of an object. |
+| min() | Return the smallest item in an iterable. |
+| max() | Return the largest item in an iterable. |
+| sorted() | Return a new sorted list. |
+| sum() | Sums the items of an iterable from left to right and returns the total. |
+| ** Iterables ** | |
+| all() | Return True if all elements of the iterable are true (or if the iterable is empty). |
+| any() | Return True if any element of the iterable is true. If the iterable is empty, return False. |
+| callable() | Return True if the object argument appears callable, False if not. |
+| map() | Return an iterator that applies function to every item of iterable, yielding the results. |
+| filter() | Construct an iterator from elements of iterable for which function returns true. |
+| zip() | Make an iterator that aggregates elements from each of the iterables. |
+| range() | Return an iterable sequence. |
+| next() | Retrieve the next item from the iterator. |
+| reversed() | Return a reverse iterator. |
+| ** I/O-related ** | |
+| dir() | Return the list of names in the current local scope. |
+| open() | Open file and return a corresponding file object. |
+| print() | Print objects to the stream. |
+| input() | Reads a line from input, converts it to a string (stripping a trailing newline), and returns that. |
+|** Runs Code** | |
+| compile() | Compile the source into a code or AST object. |
+| eval() | The argument is parsed and evaluated as a Python expression. |
+| exec() | Dynamic execution of Python code. |
+| ** Other functions ** | |
+| classmethod() | Return a class method for the function. |
+| getattr() | Return the value of the named attribute of an object. |
+| setattr() | Assigns the value to the attribute. |
+| delattr() | Deletes the named attribute of an object. |
+| hasattr() | Return True if the name is one of the object's attributes. |
+| globals() | Return a dictionary representing the current global symbol table. |
+| locals() | Update and return a dictionary representing the current local symbol table. |
+| isinstance() | Return True if the object argument is an instance. |
+| issubclass() | Return True if class is a subclass. |
+| property() | Return a property attribute. |
+| staticmethod() | Return a static method for function. |
+| super() | Return a proxy object that delegates method calls to a parent or sibling class. |
+| vars() | Return the \__dict__ attribute for a module, class, instance, or any other object. |
+| \__import__() | This function is invoked by the import statement. |
+
+
+
+
+
+## References
+
+1. https://gist.github.com/mindful108/6412490
+2. http://www.programiz.com/python-programming/keyword-list
+3. https://learnpythonthehardway.org/book/ex37.html
+
+

@@ -1,0 +1,67 @@
+# From Associative Array to Dictionary
+
+
+A> ## In a nutshell
+A>
+A> 
+
+Associative arrays in PERL are called dictionaries in Python.
+
+Here is a PERL program using an associative array.
+
+~~~~~~~~
+%A = ("john", 39, "mark", 170);
+
+print $A{"john"},"\n";	
+print %A,"\n";
+~~~~~~~~
+
+
+Its equivalent Python code is shown below.
+
+~~~~~~~~
+A = {'john': 12, 'mark': 170}
+
+print A['john']
+print A	
+~~~~~~~~
+
+
+
+## Iterating over keys and values
+
+
+| Keyword   | Action   |
+|-----------|----------|
+| **in**   | checks if an element is in a list  or dictionary|
+| **del**   | deletes an element from a list or dictionary |
+
+
+### Keyword 'in'
+
+The keyword 'in' can be used to iterate over the keys or values.
+
+~~~~~~
+age={}
+age['john']=12
+age['paul']=77
+
+print 12 in age
+print 'john' in age
+~~~~~~
+
+### Keyword - del
+
+The keyword del can be used to delete a member of a dictionary.
+
+~~~~~~
+age={}
+age['john']=12
+age['paul']=77
+
+print age
+del age['john']
+print age
+~~~~~~
+
+

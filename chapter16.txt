@@ -1,0 +1,90 @@
+# Reading and Writing Files
+
+
+A> ## In a nutshell
+A>
+A> The file reading syntax in PERL and Python are similar.
+
+
+## Reading from a file   
+
+
+In PERL, files are read as -
+
+~~~~~~~~
+open(IN,"filename");
+$_=<IN>;
+while(<IN>)
+{
+	print $_,"\n";
+}
+close(IN);
+~~~~~~~~
+Above command first reads one line in the statement '$_=<IN>'. Then it continually reads sentences and prints
+on the screen.
+
+
+The equivalent command in Python is -
+
+~~~~~~~~
+f = open('filename', 'r')
+line = f.readline()
+
+for line in f:
+    print line
+f.close()
+
+print line
+~~~~~~~~
+
+## Reading the entire file in an array
+
+~~~~~~~~
+open(IN,"filename");
+@array=<IN>;
+~~~~~~~~
+
+
+~~~~~~~~
+f = open('filename', 'r')
+lines = f.readlines()
+~~~~~~~~
+
+
+
+## Writing a string into a file
+
+PERL
+
+~~~~~~~~
+open(OUT,">myfile");
+print OUT "My name is john\n";
+close(OUT);
+~~~~~~~~
+
+
+Python 
+
+~~~~~~~~
+f = open('myfile', 'w')
+
+f.write("hi, my name is john\n")	
+~~~~~~~~
+
+## File read/write symbols in PERL and Python
+
+
+{width="default"}
+|  file request        | PERL                |  Python                    |
+|-------------------------------------------------------------------------|
+| open for reading     | open(F,"myfile");   |  f = open('myfile', 'r')   |
+|-------------------------------------------------------------------------|
+| open for writing     | open(F,">myfile");  |  f = open('myfile', 'w')   |
+|-------------------------------------------------------------------------|
+| open for appending   | open(F,">>myfile"); |  f = open('myfile', 'a')   |
+|-------------------------------------------------------------------------|
+| open for read/write  |                     |  f = open('myfile', 'r+')  |
+|-------------------------------------------------------------------------|
+
+
+

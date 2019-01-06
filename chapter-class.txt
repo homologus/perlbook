@@ -1,0 +1,145 @@
+# Class, Iterator, etc.
+
+Object oriented programming.
+
+
+We do not want you to create classes. Just understand them so that you can
+use them from the available libraries.
+
+[Code](https://coding4medicine.com/code-all/codes/concept19a.html) -
+
+~~~~~~~~~
+class complex_number:
+
+        def __init__(self, re, im):
+                self.re = re
+                self.im = im
+
+z=complex_number(2,5)
+
+print z.re, z.im
+~~~~~~~~~
+
+
+
+~~~~~~~~~
+class complex_number:
+
+        def __init__(self, re, im):
+                self.re = re
+                self.im = im
+
+
+        def absquare(self):
+                return self.re*self.re + self.im*self.im
+
+z=complex_number(2,5)
+
+print z.re, z.im, z.absquare()
+~~~~~~~~~
+
+
+
+
+Example - integer_list, dna_seq
+
+
+Purpose of class is to make sure data conforms to standard.
+
+
+
+# Concept 20 - Iterables, Iterators, Generators
+
+Very powerful concepts.
+
+Collection.
+
+Map, lambda.
+
+
+http://nvie.com/posts/iterators-vs-generators/
+
+[All codes here](https://coding4medicine.com/code-all/codes/concept20a.html).
+
+
+~~~~~~~~~
+a=iter(range(5))
+print a.next()
+print a.next()
+print a.next()
+print a.next()
+print a.next()
+~~~~~~~~~
+
+
+
+http://nvie.com/posts/iterators-vs-generators/
+
+
+>>> from itertools import cycle
+>>> colors = cycle(['red', 'white', 'blue'])
+>>> next(colors)
+'red'
+>>> next(colors)
+'white'
+>>> next(colors)
+'blue'
+>>> next(colors)
+'red'
+
+
+
+Protocols -
+
+
+http://anandology.com/python-practice-book/iterators.html
+
+http://www.dabeaz.com/generators-uk/
+
+
+https://stackoverflow.com/questions/9884132/what-exactly-are-pythons-iterator-iterable-and-iteration-protocols
+
+https://stackoverflow.com/questions/32799980/what-exactly-does-iterable-mean-in-python
+
+
+
+
+** make sure example is changed **
+
+
+https://docs.python.org/2/tutorial/classes.html
+
+
+
+# http://www.diveintopython3.net/iterators.html
+
+# http://nvie.com/posts/iterators-vs-generators/
+
+The following code is from online.
+
+~~~~~~~~~~~
+class Fib:
+    '''iterator that yields numbers in the Fibonacci sequence'''
+
+    def __init__(self, max):
+        self.max = max
+
+    def __iter__(self):
+        self.a = 0
+        self.b = 1
+        return self
+
+    def __next__(self):
+        fib = self.a
+        if fib > self.max:
+            raise StopIteration
+        self.a, self.b = self.b, self.a + self.b
+        return fib
+
+
+x=Fib(10)
+print x
+~~~~~~~~~~~
+
+
+

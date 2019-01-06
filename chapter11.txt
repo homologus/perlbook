@@ -1,0 +1,20 @@
+# Useful Python Packages and Tools
+
+
+A> ## In a nutshell
+A>
+A> 
+
+
+
+## Python command line
+
+## Numpy
+
+## Jupyter Notebook
+
+Inline -
+
+http://search.cpan.org/dist/Inline-Python/Python.pod
+
+

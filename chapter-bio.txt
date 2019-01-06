@@ -1,0 +1,325 @@
+#  From BioPERL to  Biopython
+
+Biopython is good for -
+
+1. Quick analysis of nucleotide and protein sequence. You can easily extract
+   a segment from a longer sequence, get reverse complement, do nucleotide
+   to protein translation.
+
+2. Parsing of all kinds of files, including simple FASTA files, 
+   BLAST output, MUSCLE output, PDB files, and so on.
+
+3. Submitting requests to online databases and fetchin data from them. For example,
+   you can programmatically run BLAST at NCBI, instead of manually filling up the
+   form.
+
+4. Statistical and bioinformatics analysis -  clustering, motifs, phylogeny, etc.
+
+
+## Analyzing Nucleotide and Protein Sequences
+
+Biopython has many functions to perform routine analysis
+of nucleotide and protein sequences. The sequences themselves
+are saved in the Bio.Seq class.
+
+
+### Extracting Subsequences
+
+~~~~~~~
+from Bio.Seq import Seq
+read = Seq("GATCGTAGATAGTGCGCGCGTAGAGGAGAGATAGAGAGAGGAGATAGAGATA")
+
+print read[10:20]
+~~~~~~~
+
+You will see "AGTGCGCGCG" being printed. 
+
+Here read is a Bio.Seq object that can be used to store nucleotide
+and protein sequences. A
+subsequence of Bio.Seq object can be obtained in the same
+way we get substrings. Its coordinate system starts from 0.
+
+
+### Reverse Complement
+
+~~~~~~~
+from Bio.Seq import Seq
+read = Seq("GATCGTAGATAGTGCGCGCGTAGAGGAGAGATAGAGAGAGGAGATAGAGATA")
+
+print read.reverse_complement()
+~~~~~~~
+
+The function 'reverse_complement' is included in Bio.Seq class. You 
+will see the output "TATCTCTATCTCCTCTCTCTATCTCTCCTCTACGCGCGCACTATCTACGATC".
+
+
+
+### Translate into Proteins
+
+~~~~~~~
+from Bio.Seq import Seq
+read = Seq("GATCGTAGATAGTGCGCGCGTAGAGGAGAGATAGAGAGAGGAGATAGAGATA")
+
+print read.translate()
+~~~~~~~
+
+
+~~~~~~~~
+/usr/local/lib/python2.7/dist-packages/Bio/Seq.py:2095: BiopythonWarning: Partial codon, len(sequence) not a multiple of three. Explicitly trim the sequence or add trailing N before translation. This may become an error in future.
+  BiopythonWarning)
+DRR*CARRGEIERGDRD
+~~~~~~~~
+
+If you trim the last nucleotide, the error will go away.
+
+
+
+### Compute GC Content
+
+~~~~~~~
+from Bio.SeqUtils import GC
+from Bio.Seq import Seq
+read = Seq("GATCGTAGATAGTGCGCGCGTAGAGGAGAGATAGAGAGAGGAGATAGAGATA")
+
+print GC(read)
+~~~~~~~
+
+~~~~~~~~
+Output - 48.0769230769
+~~~~~~~~
+
+
+You can experiment by changing the sequence to 
+all As or all Gs to see whether the GC function works correctly.
+
+
+## Parsing Biological Records
+
+
+Parsing text files of different formats is a tedious task in
+bioinformatics.  Biopython makes this process
+very easy. It can load data stored in many different file formats.
+
+### Functions - 'read' and 'parse' 
+
+Biopython maintains uniform syntax for loading data from a file. Each
+of its class parsing text files has two functions - 'read' and 'parse'.
+
+Typically, biological data files have multiple records of the
+same type. For example, a FASTA file contains several different
+sequences. A BLAST output file contains search results
+for several different input sequence.  The function 'read' loads only the first
+record from a large file, whereas the function 'parse' creates an iterator
+to go over all records.  Examples for the functions are shown below.
+
+
+### Reading FASTA File
+
+The function 'read' fetches only the first record from a FASTA file.
+
+~~~~~~
+from Bio import SeqIO
+record=SeqIO.read("seq.fasta", "fasta")
+print record.id, record.seq
+~~~~~~
+
+The function 'parse' creates an iterator  to go over all records in 
+a FASTA file.  You can either loop over the records, or use next()
+function to fetch one record at a time.
+~~~~~~
+from Bio import SeqIO
+records=SeqIO.parse("seq.fasta", "fasta")
+
+for record in records:
+        print record.id, record.seq
+~~~~~~
+
+or 
+
+~~~~~~
+from Bio import SeqIO
+records=SeqIO.parse("seq.fasta", "fasta")
+
+record = next(records)
+print record.id
+print record.seq
+print len(record)
+
+record = next(records)
+print record.id
+print record.seq
+print len(record)
+~~~~~~
+
+
+### KEGG Example
+
+http://www.genome.jp/dbget-bin/www_bget?ec:5.1.1.1
+
+The function 'read' fetches only one record.
+~~~~~~~~~
+from Bio.KEGG import Enzyme
+record = Enzyme.read(open("ec_5.1.1.1.txt"))
+....
+....
+....
+~~~~~~~~~
+
+The function 'parse' creates an iterator to go over all records.
+~~~~~~~~~
+from Bio.KEGG import Enzyme
+records = Enzyme.parse(open("ec_5.1.1.1.txt"))
+
+record=next(records)
+....
+....
+....
+
+record=next(records)
+....
+....
+....
+~~~~~~~~~
+
+
+
+### Commands for Different Types of Data
+
+Similar 'parse' and 'read' functions can be used to process many different
+types of data files. In the following table, we list only one of the
+two functions. The other one is also valid.
+
+
+| Data Type        | Biopython Library             |
+|------------------|-------------------------------|
+| FASTA   | from Bio import SeqIO<br>records=SeqIO.parse("seq.fasta", "fasta") |
+| Genbank | from Bio import SeqIO<br>records = SeqIO.parse("dat.gbk", "genbank") |
+| BLAST   |  from Bio.Blast import NCBIXML<br>records = NCBIXML.parse(open("blast_out.xml")) |
+| CLUSTAL| from Bio import AlignIO<br>align = AlignIO.read("alignment.aln", "clustal") |
+| MUSCLE  | from Bio import AlignIO<br>align = AlignIO.read("alignment.faa", "fasta") | 
+| Phylogeny | from Bio import Phylo<br>tree = Phylo.read("tree.dnd", "newick") |
+| Entrez  | from Bio import Entrez<br>records = Entrez.parse(open("Homo_sapiens.xml"))| 
+| UniGene | from Bio import UniGene<br>record = UniGene.read(open("gene.data")) |
+| GEO     | from Bio import Geo<br>records = Geo.parse(open("GSE273.txt"))|
+| Medline | from Bio import Medline<br>records=Medline.parse(open("pubmed_file.txt")) |
+| Pubmed  | |
+| SwissProt Keywords | from Bio.SwissProt import KeyWList<br>records = KeyWList.parse(open("keywlist.txt")) | 
+| Prosite | from Bio.ExPASy import Prosite<br>records = Prosite.parse(open("prosite.dat")) |
+| Prosite Doc| from Bio.ExPASy import Prodoc<br>records = Prodoc.parse(open("prosite.doc")) |
+| EXPASy  | from Bio.ExPASy import Enzyme<br>records = Enzyme.parse(open("enzyme.dat")) |
+| PDB PDBParser| from Bio.PDB.PDBParser import PDBParser |
+| PDB MMCIF2Dict | from Bio.PDB.MMCIF2Dict import MMCIF2Dict | 
+| PDB MMCIFParser | from Bio.PDB.MMCIFParser import MMCIFParser |
+| PDB MMTFParser | from Bio.PDB.mmtf import MMTFParser | 
+| KEGG    | from Bio.KEGG import Enzyme<br>records = Enzyme.parse(open("ec_5.1.1.1.txt")) |
+
+
+Although 'parse' and 'read' functions are used to parse different types
+of data files, the records created by them are not identical. SeqIO.parse produces  
+'SeqIO' type of records, whereas 'Medline.parse' produces 'Medline' type of records.  We
+will see more details about those records in the following section.
+
+## Objects to Store Different Types of Data
+
+In the last section, we learned about 'read' and 'parse'
+functions to read files in different formats.  The output
+from those calls create different kinds of records, as
+appropriate for the situation. Let us see a few examples. Some
+of  those fields themselves can be iterators.
+
+### FASTA Record
+
+Bio.SeqIO with fasta
+
+
+id -->
+seq -->
+
+### BLAST Record
+
+Bio.Blast.NCBIXML object
+
+
+~~~~~~~
+from Bio.Blast import NCBIXML
+records = NCBIXML.parse(open("blast_output.xml"))
+
+E_VALUE_THRESH = 0.00001
+for record in records:
+ for alignment in record.alignments:
+   for hsp in alignment.hsps:
+     if hsp.expect < E_VALUE_THRESH:
+             print('Next Alignment')
+             print('seq:', alignment.title)
+             print('L:', alignment.length)
+             print('e value:', hsp.expect)
+             print(hsp.query[0:75] + '...')
+             print(hsp.match[0:75] + '...')
+             print(hsp.sbjct[0:75] + '...')
+~~~~~~~
+
+
+
+More examples are shown in the Example section.
+
+
+## Accessing Data from the Internet
+
+One attractive feature of Biopython is that it  can fetch different
+kinds of data from the internet. For example, in case of BLAST, it
+can submit BLAST request to the NCBI, and then get back the output for you.
+
+
+
+### BLAST
+
+~~~~~~~~
+from Bio.Blast import NCBIWWW
+from Bio import SeqIO
+record = SeqIO.read("m_cold.fasta", format="fasta")
+result_handle = NCBIWWW.qblast("blastn", "nt", record.seq)
+
+save_file = open("my_blast.xml", "w")
+save_file.write(result_handle.read())
+save_file.close()
+result_handle.close()
+~~~~~~~~
+
+
+### KEGG
+
+http://www.genome.jp/dbget-bin/www_bget?ec:5.1.1.1
+
+~~~~~~~~
+from Bio.KEGG import REST
+from Bio.KEGG import Enzyme
+req = REST.kegg_get("ec:5.1.1.1")
+open("ec_5.1.1.1.txt", 'w').write(req.read())
+~~~~~~~~
+
+
+### Entrez
+
+~~~~~~~~
+from Bio import Entrez
+Entrez.email = "A.N.Other@example.com"     # Always tell NCBI who you are
+handle = Entrez.efetch(db="nucleotide", id="186972394", rettype="gb", retmode="text")
+print handle.read()
+~~~~~~~~
+
+
+
+
+## References
+
+1. https://coding4medicine.com/Materials/biopython/index.html
+
+2. http://biopython.org/DIST/docs/tutorial/Tutorial.html
+
+3. http://people.duke.edu/~ccc14/pcfb/biopython/BiopythonBasics.html
+
+4. https://www.coursera.org/learn/python-genomics/lecture/ahlsr/lecture-8-biopython-13-32
+
+5. https://www.gitbook.com/book/krother/biopython-tutorial/details
+
+

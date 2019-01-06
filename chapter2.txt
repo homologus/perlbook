@@ -1,0 +1,135 @@
+#  Learning through Examples
+
+
+A> ## In a nutshell
+A>
+A> 1. Unlike PERL, statements in Python programs do not end with semicolons.
+A>
+A> 2. The 'print' statement in Python always adds a newline at the end of output.
+A>
+A> ## Simple Steps to Convert PERL Programs to Python
+A>
+A> 1. Remove all ';' at the end of the line.
+A>
+A> 2. Remove all curly brackets and adjust indentation.
+A>
+A> 3. Convert variables names from $x, %x or @x to x.
+
+
+In the previous chapter, you learned about the shared history of PERL and Python. Here you will see how similar the codes written in two languages are based on three examples. You will learn how to move easily from PERL to Python by making three simple changes in the code structure.
+
+
+## Example 1 - Hello World
+
+
+The most basic "hello world" program in PERL looks like -
+
+~~~~~~~~
+# This is a simple program
+
+print "Hello from Homolog.us\n";
+~~~~~~~~
+
+You can run it by typing -
+
+~~~~~~~~
+> perl hello.perl
+~~~~~~~~
+
+
+A similar code in Python looks like  -
+
+~~~~~~~~
+# This is a simple program
+
+print "Hello from Homolog.us"
+~~~~~~~~
+
+You run it with -
+
+~~~~~~~~
+> Python hello.py
+~~~~~~~~
+
+
+## Example 2 - Multiplication Table
+
+In this example, we print the multiplication table of 10.
+
+### PERL
+
+~~~~~~~~
+for($i=0; $i<10; $i++)
+{
+	print "10 times, $i, " is", 10*$i,"\n";
+}
+~~~~~~~~
+
+### Python
+
+~~~~~~~~
+for i in range(10):
+	print "10 times, i," is", 10*i
+~~~~~~~~
+
+
+## Example 3 - Prime Number
+
+In this example, we check whether an integer is prime.
+
+### PERL
+
+~~~~~~~~
+$num=59;
+
+$true=1;
+
+for($i=2; $i < $num/2; $i++)
+{
+	if($num % $i ==0)
+	{
+		$true=0;
+	}
+}
+
+if($true==1)
+{
+	print $num, " is prime\n";
+}
+else
+{
+	print $num, " is not prime\n";
+}
+~~~~~~~~
+
+
+### Python
+
+~~~~~~~~
+num=59
+
+true=1
+
+for i in range(2,num/2):
+	if num % i ==0:
+		true=0
+
+if true==1:
+	print num, " is prime"
+else:
+	print num, " is not prime"
+~~~~~~~~
+
+
+Let us go over the differences between the PERL and Python scripts one by one.
+
+1. You can see that the Python programs do not include semicolons at the end of the lines. By removing all semicolons from the ends of Python statements, you can make them look almost like Python.
+
+   This change has an important ramification however.  PERL programmers can pack multiple statements in the same line, but that is not possible in Python. Rather than a drawback, this is seen by Python programmers as a big plus. The inability to pack multiple statements in one line keeps Python programs clean and readable.
+
+2. Unlike PERL, Python code does not use curly brackets. This change also has an important ramification. Python uses indentation to identify blocks inside 'for' or 'while' loops. Therefore, Python is picky about the size of the indentation, which needs to be identical for all statements within the block.
+
+3.  Unlike PERL, Python variables do not have characters '$', '%' or '@' before their names.
+
+4. Python 'print' statement automatically adds a newline, whereas PERL statements need "\n" to be added to be added explicitly.
+

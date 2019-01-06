@@ -1,0 +1,81 @@
+# Modules and Packages
+
+
+A> ## In a nutshell
+A> 
+A> i) The definition of modules and packages is somewhat opposite in PERL and Python.
+A>
+
+A module in PERL is a collection of functions. A package is much larger.
+
+In Python, a package 
+
+http://stackoverflow.com/questions/3733969/old-pl-modules-versus-new-pm-modules
+
+
+PERL modules look like -
+
+~~~~~~~~
+use Useful;
+open(IN,"gene");
+$_=<IN>;
+
+$x=Useful::translate($_);
+
+print $x,"\n";
+~~~~~~~~
+
+
+
+Python modules look like -
+
+~~~~~~~~
+import Useful
+
+~~~~~~~~
+
+## Splitting Code into Multiple Files
+
+| Keyword   | Action   |
+|-----------|----------|
+| **import**   | Brings in  code from an external file    |
+
+
+We will separate our code into two files and see how they run.
+You cannot do this in the sandbox.
+
+
+In file other.py, type -
+
+~~~~~~~~
+print "code in other file"
+~~~~~~~~
+
+
+In main.py -
+
+~~~~~~~~
+import other
+
+print "code in main file"
+~~~~~~~~
+
+
+Both files need to be in the same directory.  When you run main.py, it will automatically
+include the code from 'other.py' and run it.
+
+
+~~~~~~~~
+print "code in main file"
+
+import other
+~~~~~~~~
+
+
+
+Import from external file happens only once.
+
+
+The main purpose of import is to separate function definitions in a separate file.
+
+

@@ -1,0 +1,36 @@
+# From CPAN to PyPI
+
+
+A> ## In a nutshell
+A>
+A> 
+
+
+
+
+Installing perl modules from CPAN (http://www.cpan.org/) -
+
+~~~~~~~~
+> cpan App::cpanminus
+
+> cpanm Module::Name
+~~~~~~~~
+
+
+
+Python Package Index
+
+https://pypi.python.org/pypi
+
+One step installation process -
+
+~~~~~~~~
+git install pip
+
+pip install package
+~~~~~~~~
+
+
+Where do they go in the unix directory structure?
+
+

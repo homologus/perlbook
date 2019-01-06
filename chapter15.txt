@@ -1,0 +1,19 @@
+# Closing Comments
+
+PERL was known as the "duct tape that held the internet". 
+
+Who killed PERL?  We note that scripting languages go out of fashion not because they are bad, but they are successful in solving the problem at hand. That allows the rise of technologies solving the higher level of problems, and people working on new technology like to create their own tools to start out fresh.
+
+https://www.linuxjournal.com/article/3394
+https://www.fastcompany.com/3026446/the-fall-of-perl-the-webs-most-promising-language
+
+
+## PERL6 than never came and Python3 that never got adopted
+
+PERL5 came out on October 17, 1994. That was the same year Netscape web browser was published and
+internet was officially born.
+
+
+https://thenewstack.io/larry-walls-quest-100-year-programming-language/
+
+

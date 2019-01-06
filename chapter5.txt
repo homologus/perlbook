@@ -1,0 +1,123 @@
+# From Array to List
+
+A> ## In a nutshell
+A>
+A> PERL arrays are known as lists in Python.
+A> Python does not use '@' special symbol before the name of a list. Otherwise, the syntax is 
+A> mostly similar to PERL.
+
+
+PERL arrays are called lists in Python.
+
+Here is a PERL program demonstrating various aspects of arrays.
+
+~~~~~~~~
+@A=(10, 20, 30, 40, 3);
+print $A[2],"\n";
+$N=@A;
+print "$N\n";
+
+@A=();
+$N=@A;
+print "$N\n";
+print $A[2],"\n";
+~~~~~~~~
+
+The equivalent code in Python looks like -
+
+~~~~~~~~
+A=[10,20,30,40,3]
+print A[2]
+print len(A)
+
+A=[]
+print len(A)
+print A[2]
+~~~~~~~~
+
+Apart from the differences mentioned in chapter 2, here are the additional changes.
+
+1. Length of list in Python is obtained by using the 'len' function.
+2. PERL is more forgiving than Python if the command seeks out-of-range elements of arrays/lists.
+
+
+## Python Shortcuts on Lists
+
+Here we discuss a number of useful shortcuts related to lists in Python.
+
+A. The '+' symbol concatenates two lists.
+
+~~~~~~
+a=[1,3,2,0]
+b=[2,3,1,7]
+print a+b
+~~~~~~
+
+B. You can use ':' to get sublist.
+
+~~~~~~
+a=[1,3,4,9,6,2,0]
+b=a[3:7]
+print b
+~~~~~~
+
+C. The following command gives a sublist from 3 to 7, skip 2.
+
+~~~~~~
+a=[1,3,4,9,6,2,0]
+b=a[3:7:2]
+print b
+~~~~~~
+
+
+D. The following command reverses the list.
+
+~~~~~~
+a=[1,3,4,9,6,2,0]
+b=a[::-1]
+print b
+~~~~~~
+
+
+
+## Keywords 'in' and 'del'
+
+
+| Keyword   | Action   |
+|-----------|----------|
+| **in**   | checks if an element is in a list  or dictionary|
+| **del**   | deletes an element from a list or dictionary |
+
+
+### Keyword 'in'
+
+The keyword 'in' can be used to iterate over the keys or values. It checks wherher a number is in the list or not.
+
+~~~~~~
+a=[3,4,9,1]
+
+print 3 in a
+print 100 in a
+~~~~~~
+
+
+## Keyword - del
+
+The keyword del is used to remove a list element at a known index.
+
+~~~~~
+x=['a','b','c','d']
+del x[2]
+print x
+~~~~~
+
+
+Try -
+
+~~~~~~
+a=[1,3,4,9,6,2,0]
+print a
+del a[2]
+print a
+~~~~~~
+

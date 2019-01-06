@@ -1,0 +1,116 @@
+# Regular Expressions
+
+
+A> ## In a nutshell
+A>
+A> Python incorporated PERL-like regular expressions.
+A>
+
+
+Regular expressions in PERL -
+
+~~~~~~~~
+$line= "ATGAAATGTGGTGGG"
+
+if($line=~/^ATG(\S\S\S).*(\S)G$/)
+{
+	print "match.group(1): $1\n";
+	print "match.group(2): $2\n";
+}
+~~~~~~~~
+
+
+
+Regular expressions in Python -
+
+~~~~~~~~
+import re
+
+line = "ATGAAATGTGGTGGG"
+
+match = re.match( r'^ATG(\S\S\S).*(\S)G$', line)
+
+if match:
+   print "match.group(1) : ", match.group(1)
+   print "match.group(2) : ", match.group(2)
+~~~~~~~~
+
+
+# Library - Regular Expressions
+
+Regular expression is a special sublanguage to make searches through strings easy. Python
+has a special library ('re') to facilitate the use of regular expressions.
+        
+## Search
+
+[Code](https://coding4medicine.com/code-all/codes/concept21a.html) -
+
+~~~~~
+import re
+
+S=re.search('[a-z]a[a-z]', 'a fat cat sat')
+
+if S:
+  print "yes"
+else:
+  print "no"
+~~~~~
+
+The above code searches for three letter patterns within the sentence, where
+the first and third letter can be 'a-z', but the middle letter is 'a'.
+
+[Code](https://coding4medicine.com/code-all/codes/concept21b.html) -
+
+~~~~
+import re
+str = 'I am flying from Seatttle to San Francisco'
+match = re.search(r'[SF]', str)
+if match:
+   print 'found S/F', match.group()
+else:
+    print 'did not find S/F'
+~~~~
+
+
+
+## Search and Replace
+
+
+[Code](https://coding4medicine.com/code-all/codes/concept21c.html) -
+
+~~~~~~~
+import re
+
+seq="ATTCGATCT"
+
+# counting A
+s= re.sub('A', '', seq)
+diff=len(seq)-len(s)
+print "count of A =", diff
+~~~~~~~
+
+
+The sub command replaces "Seattle" with "London" in the following example.
+
+
+[Code](https://coding4medicine.com/code-all/codes/concept21d.html) -
+
+~~~~~~
+import re
+str = 'I am flying from Seattle to San Francisco'
+x = re.sub(r'Seattle', 'London', str)
+print x
+~~~~~~
+
+
+## References
+
+For description of regular expression sublanguage, check here -
+
+https://regexr.com/
+
+https://regex101.com/
+
+https://developers.google.com/edu/python/regular-expressions?hl=en
+
+

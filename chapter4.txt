@@ -1,0 +1,143 @@
+# Loops and Conditions
+
+
+A> ## In a nutshell
+A>
+A> 1. Instead of bracket in PERL, Python uses indentation to represent code-blocks.
+A>
+A> 2. Python uses a ':' at the end of 'while' or 'if' statement.
+A>
+
+
+## 'while' loop
+
+Let us demonstrate the 'while' loop by writing the multiplication table for 9 in both PERL and Python.
+
+The PERL code -
+
+~~~~~~~~
+$i=1;
+while($i<=10)
+{
+  print 9*$i, "\n";
+  $i++;
+}
+~~~~~~~~	
+
+
+Python code -
+
+~~~~~~~~
+i=1
+while(i<=10):
+   print 9*i
+   i=i+1
+~~~~~~~~
+
+Apart from the differences mentioned in chapter 2, two codes are identical.
+
+## 'if-else'
+
+PERL code -
+
+~~~~~~~~
+$i=15;
+if($i>10) {
+  print "$i greater than 10\n";
+}
+else {
+  print "$i less than 10\n";
+}
+~~~~~~~~
+
+Python code -
+
+~~~~~~~~
+i=15
+if(i>10):
+   print "$i greater than 10\n";
+else:
+   print "$i less than 10\n";
+~~~~~~~~
+
+
+## 'for' Loops
+
+| Keyword   | Action   |
+|-----------|----------|
+| **for**   | loop |
+| **continue** | skips over the remaining lines and repeats |
+| **break** | quits the loop |
+
+
+PERL code -
+
+~~~~~~~~~~~~~~~~
+for($i=1; $i<11; $i++)
+{
+    print "5 times", $i, "is", 5*$i, "\n";
+
+}
+print "completed for loop"
+~~~~~~~~~~~~~~~~
+
+Python code -
+
+~~~~~~~~~~~~~~~~
+for i in range(1,11):
+    print "5 times", i, "is", 5*i
+
+print "completed for loop"
+~~~~~~~~~~~~~~~~
+
+
+## Using 'for' over a Dictionary
+
+[Try](https://coding4medicine.com/code-all/codes/concept14b.html) -
+
+~~~~~~~~~~~~~~
+age={}
+age['john']=12
+age['paul']=77
+
+for key in age:
+        print key
+        print age[key]+7
+~~~~~~~~~~~~~~
+
+When 'for' is written on a dictionary, the loop variable takes the values of
+the keys of the dictionary.
+
+
+## Keywords 'break' and 'continue'
+
+'While' loops become even more powerful, when they are customized using an
+internal condition ('if'). The keywords 'break' and 'continue' come handy in that situation.
+
+
+
+~~~~~~
+i=0
+while True:
+    i=i+1
+    if i==4:
+        break
+    print "5 times", i, "is", 5*i
+~~~~
+
+In the above code, the condition for 'while' is always True. Therefore, it is expected to run infinite times. That does not happen, because the loop is terminated using 'break', when i reaches 4.
+
+
+
+~~~~
+i=0
+while i<10:
+    i=i+1
+    if i==4:
+        continue
+    print "5 times", i, "is", 5*i
+~~~~
+
+The keyword 'continue' skips over the remaining lines of the 'while' block and starts the following run of the 'while' loop.
+
+
