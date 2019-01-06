@@ -48,7 +48,7 @@ Purpose of class is to make sure data conforms to standard.
 
 
 
-# Concept 20 - Iterables, Iterators, Generators
+## Iterables, Iterators, Generators
 
 Very powerful concepts.
 
@@ -76,6 +76,7 @@ print a.next()
 http://nvie.com/posts/iterators-vs-generators/
 
 
+~~~~~~~~~
 >>> from itertools import cycle
 >>> colors = cycle(['red', 'white', 'blue'])
 >>> next(colors)
@@ -86,6 +87,7 @@ http://nvie.com/posts/iterators-vs-generators/
 'blue'
 >>> next(colors)
 'red'
+~~~~~~~~~
 
 
 
@@ -111,9 +113,9 @@ https://docs.python.org/2/tutorial/classes.html
 
 
 
-# http://www.diveintopython3.net/iterators.html
+http://www.diveintopython3.net/iterators.html
 
-# http://nvie.com/posts/iterators-vs-generators/
+http://nvie.com/posts/iterators-vs-generators/
 
 The following code is from online.
 

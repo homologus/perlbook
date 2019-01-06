@@ -45,7 +45,7 @@ print y
 ~~~~~~~~
 
 
-## tring-related Function
+## String-related Function
 
 https://docs.python.org/2/library/string.html
 
@@ -55,13 +55,15 @@ https://docs.python.org/2/library/string.html
 
 Internally, Python represents each string as an immutable list.  Therefore, many list-related commands and functions can be used for strings.  Here is an example.
 
-~~~~~~~
+
+~~~~~~~~
 line="Welcome to the class"
 
 print line[10]
 print line[1:9]
 print line[::-1]
-~~~~~~~
+~~~~~~~~
+
 
 The first print command prints a single character from the list 'line', the second 
 command prints a substring, and the third one reverses the string.
@@ -70,68 +72,81 @@ command prints a substring, and the third one reverses the string.
 
 ### Functions - upper(), lower()
 
-~~~~~~~
+
+~~~~~~~~
 line="A to Z"
 print line.upper()
 print line.lower()
-~~~~~~~
+~~~~~~~~
+
 
 
 ### Function - strip()
 
-~~~~~~~
+
+~~~~~~~~
 line=f.readline()
 l=line.strip()
 
 print line
 print l
-~~~~~~~
+~~~~~~~~
+
 
 ### Function - find()
 
-~~~~~~~
+
+~~~~~~~~
 mystring="ATGCAAATGCAT"
 
 print mystring.find("AAA")
-~~~~~~~
+~~~~~~~~
+
 
 ### Function - replace()
 
-~~~~~~~
+
+~~~~~~~~
 mystring="ATGCAAATGCAT"
 
 new=mystring.replace("A","T")
 
 print new
-~~~~~~~
+~~~~~~~~
+
 
 The function replace() replaces a substring with a different string.
 
 You can use it to replace or remove letters. For example, the following
 code removes all commas from a line.
 
-~~~~~~~
+
+~~~~~~~~
 mystring="John, Jane, Jill, Juan, Jedi"
 
 new = mystring.replace(",","")
 
 print new
-~~~~~~~
+
+~~~~~~~~
 
 
 ### Function - split()
 
-~~~~~~~
+
+~~~~~~~~
 line="A big fat hen"
 
 x=line.split()
 for w in x:
    print w
-~~~~~~~
+
+~~~~~~~~
 
 ### Function - join()
 
-~~~~~
+
+~~~~~~~~
 x=["ATGC", "TGGG", "TAAA"]
 
 y="ATGCTGGGTAAA"
@@ -141,7 +156,8 @@ z= "".join(x)
 
 if(z==y):
         print "YES"
-~~~~~
+~~~~~~~~
+
 
 
 

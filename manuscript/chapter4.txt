@@ -19,8 +19,8 @@ The PERL code -
 $i=1;
 while($i<=10)
 {
-  print 9*$i, "\n";
-  $i++;
+       print 9*$i, "\n";
+       $i++;
 }
 ~~~~~~~~	
 
@@ -30,8 +30,8 @@ Python code -
 ~~~~~~~~
 i=1
 while(i<=10):
-   print 9*i
-   i=i+1
+       print 9*i
+       i=i+1
 ~~~~~~~~
 
 Apart from the differences mentioned in chapter 2, two codes are identical.
@@ -43,10 +43,10 @@ PERL code -
 ~~~~~~~~
 $i=15;
 if($i>10) {
-  print "$i greater than 10\n";
+       print "$i greater than 10\n";
 }
 else {
-  print "$i less than 10\n";
+       print "$i less than 10\n";
 }
 ~~~~~~~~
 
@@ -55,9 +55,9 @@ Python code -
 ~~~~~~~~
 i=15
 if(i>10):
-   print "$i greater than 10\n";
+       print "$i greater than 10\n";
 else:
-   print "$i less than 10\n";
+       print "$i less than 10\n";
 ~~~~~~~~
 
 
@@ -85,7 +85,7 @@ Python code -
 
 ~~~~~~~~~~~~~~~~
 for i in range(1,11):
-    print "5 times", i, "is", 5*i
+      print "5 times", i, "is", 5*i
 
 print "completed for loop"
 ~~~~~~~~~~~~~~~~

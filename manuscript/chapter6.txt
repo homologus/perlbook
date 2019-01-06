@@ -37,7 +37,6 @@ Differences -
 
 2. return at the end
 
-# Concept 18 - Creating New Functions
 
 | Keyword   | Action   |
 |-----------|----------|

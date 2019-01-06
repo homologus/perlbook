@@ -41,20 +41,23 @@ print A
 
 The keyword 'in' can be used to iterate over the keys or values.
 
-~~~~~~
+
+~~~~~~~~
 age={}
 age['john']=12
 age['paul']=77
 
 print 12 in age
 print 'john' in age
-~~~~~~
+~~~~~~~~
+
 
 ### Keyword - del
 
 The keyword del can be used to delete a member of a dictionary.
 
-~~~~~~
+
+~~~~~~~~
 age={}
 age['john']=12
 age['paul']=77
@@ -62,6 +65,7 @@ age['paul']=77
 print age
 del age['john']
 print age
-~~~~~~
+~~~~~~~~
+
 
 

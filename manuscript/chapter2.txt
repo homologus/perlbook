@@ -61,7 +61,7 @@ In this example, we print the multiplication table of 10.
 ~~~~~~~~
 for($i=0; $i<10; $i++)
 {
-	print "10 times, $i, " is", 10*$i,"\n";
+       print "10 times, $i, " is", 10*$i,"\n";
 }
 ~~~~~~~~
 
@@ -69,7 +69,7 @@ for($i=0; $i<10; $i++)
 
 ~~~~~~~~
 for i in range(10):
-	print "10 times, i," is", 10*i
+       print "10 times, i," is", 10*i
 ~~~~~~~~
 
 
@@ -86,19 +86,19 @@ $true=1;
 
 for($i=2; $i < $num/2; $i++)
 {
-	if($num % $i ==0)
-	{
-		$true=0;
-	}
+        if($num % $i ==0)
+        {
+                $true=0;
+        }
 }
 
 if($true==1)
 {
-	print $num, " is prime\n";
+        print $num, " is prime\n";
 }
 else
 {
-	print $num, " is not prime\n";
+        print $num, " is not prime\n";
 }
 ~~~~~~~~
 
@@ -111,13 +111,13 @@ num=59
 true=1
 
 for i in range(2,num/2):
-	if num % i ==0:
-		true=0
+        if num % i ==0:
+                true=0
 
 if true==1:
-	print num, " is prime"
+        print num, " is prime"
 else:
-	print num, " is not prime"
+        print num, " is not prime"
 ~~~~~~~~
 
 
