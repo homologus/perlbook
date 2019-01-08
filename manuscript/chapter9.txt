@@ -1,11 +1,9 @@
-# Another Look at Python
+# A Quick View of Pythonland
 
 
-A> ## In a nutshell
-A>
+Now that you know the main steps to convert PERL programs into Python, let us look at Python from a new programmers' angle.
 
-Now that you know how to convert PERL programs into Python, let us look at Python from the new programmers' viewpoint. These discussions highlight what is new in Python.
-
+Python core contains 32 keywords. Those words are special and cannot be used in as the names of variables. Also, Python comes with a set of commonly used functions. Those functions are shown below.
 
 
 ## Python Keywords are Special Words
@@ -33,9 +31,7 @@ Now that you know how to convert PERL programs into Python, let us look at Pytho
 
 
 
-### Special words cannot be used as names
-
-You cannot name variables (or functions) with these special words.
+Special words cannot be used as the names of variables.
 
 Wrong code -
 
@@ -46,7 +42,7 @@ print for + in
 ~~~~~~~~
 
 
-### Reserved Words
+### Here is the Full List of Keywords
 
 
 print
@@ -68,13 +64,12 @@ del (delete dictionary item, list item)
 
 exec (shell command)
 
-
 global,  with, assert, pass, yield
 except, class, raise, finally
 is, lambda, try
 
 
-
+### The Same Keywords Listed Alphabetically
 
 and       del       from      not       while
 as        elif      global    or        with
@@ -94,18 +89,13 @@ def       for       lambda    try
 
 The function **range** creates a list of integers.
 
-
 ~~~~~~~~
 print range(3)
 ~~~~~~~~
 
-
-
 ~~~~~~~~
 print range(1,5)
 ~~~~~~~~
-
-
 
 ~~~~~~~~
 print range(1,5,2)
@@ -115,6 +105,7 @@ print range(1,5,2)
 
 ### Function - len()
 
+This function gives the length of a list.
 
 ~~~~~~~~
 x=range(9,2,-2)
@@ -122,9 +113,7 @@ print len(x)
 ~~~~~~~~
 
 
-In the following code, the variable i goes from 0 to 3,
-because len(a)=4.
-
+In the following code, the variable i goes from 0 to 3, because len(a)=4.
 
 ~~~~~~~~
 a=[0,1,2,3]
@@ -134,11 +123,10 @@ for i in range(len(a)):
 ~~~~~~~~
 
 
-
-
-
 ### Function - float()
 
+
+The function float converts an integer to a floating point number.
 
 ~~~~~~~~
 x=1
@@ -147,11 +135,9 @@ print x,y
 ~~~~~~~~
 
 
-The function float converts an integer to a floating point number.
-
-
 ### Function - int()
 
+The function int gives the integer part of a floating point number.
 
 ~~~~~~~~
 x=1.7
@@ -160,20 +146,15 @@ print x,y
 ~~~~~~~~
 
 
-The function int gives the integer part of a floating point number.
-
 ### Function - str()
 
+The function str convers a number into a string.
 
 ~~~~~~~~
 x=723
 y=str(x)
 print y[0]
 ~~~~~~~~
-
-
-The function str convers a number into a string.
-
 
 
 ### All Built-in Functions
@@ -258,8 +239,6 @@ Python language includes 68 built-in functions.
 | super() | Return a proxy object that delegates method calls to a parent or sibling class. |
 | vars() | Return the \__dict__ attribute for a module, class, instance, or any other object. |
 | \__import__() | This function is invoked by the import statement. |
-
-
 
 
 

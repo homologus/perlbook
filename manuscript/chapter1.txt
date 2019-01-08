@@ -1,6 +1,6 @@
 # The Shared History of PERL and Python
 
-The year 1969 was pivotal in the history of computing. Later that year Ken Thompson and Dennis Ritchie released the first version of the UNIX operating system.  The eventual births of scripting languages like PERL and Python two decades later were related to that event.
+The year 1969 was pivotal in the history of computing. Later that year Ken Thompson and Dennis Ritchie released the first version of the UNIX operating system.  The eventual births of the scripting languages like PERL and Python two decades later were related to that event.
 
 UNIX was the first operating system written almost entirely in a high-level language (C).  Previously, operating systems were developed in machine-dependent assembly languages and therefore could not be ported to different types of computers. In contrast, the C-version of UNIX, released in 1973, could be ported easily to all kinds of computing hardware, and that made UNIX the most popular operating system. As a side effect, C also became the primary language for computing.
 

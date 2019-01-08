@@ -1,10 +1,6 @@
 # From Associative Array to Dictionary
 
 
-A> ## In a nutshell
-A>
-A> 
-
 Associative arrays in PERL are called dictionaries in Python.
 
 Here is a PERL program using an associative array.

@@ -72,30 +72,29 @@ else:
 
 PERL code -
 
-~~~~~~~~~~~~~~~~
+~~~~~~~~
 for($i=1; $i<11; $i++)
 {
     print "5 times", $i, "is", 5*$i, "\n";
 
 }
 print "completed for loop"
-~~~~~~~~~~~~~~~~
+~~~~~~~~
 
 Python code -
 
-~~~~~~~~~~~~~~~~
+~~~~~~~~
 for i in range(1,11):
       print "5 times", i, "is", 5*i
 
 print "completed for loop"
-~~~~~~~~~~~~~~~~
+~~~~~~~~
 
 
 ## Using 'for' over a Dictionary
 
-[Try](https://coding4medicine.com/code-all/codes/concept14b.html) -
 
-~~~~~~~~~~~~~~
+~~~~~~~~
 age={}
 age['john']=12
 age['paul']=77
@@ -103,7 +102,7 @@ age['paul']=77
 for key in age:
         print key
         print age[key]+7
-~~~~~~~~~~~~~~
+~~~~~~~~
 
 When 'for' is written on a dictionary, the loop variable takes the values of
 the keys of the dictionary.
@@ -116,27 +115,27 @@ internal condition ('if'). The keywords 'break' and 'continue' come handy in tha
 
 
 
-~~~~~~
+~~~~~~~~
 i=0
 while True:
     i=i+1
     if i==4:
         break
     print "5 times", i, "is", 5*i
-~~~~
+~~~~~~~~
 
 In the above code, the condition for 'while' is always True. Therefore, it is expected to run infinite times. That does not happen, because the loop is terminated using 'break', when i reaches 4.
 
 
 
-~~~~
+~~~~~~~~
 i=0
 while i<10:
     i=i+1
     if i==4:
         continue
     print "5 times", i, "is", 5*i
-~~~~
+~~~~~~~~
 
 The keyword 'continue' skips over the remaining lines of the 'while' block and starts the following run of the 'while' loop.
 

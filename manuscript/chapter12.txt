@@ -41,7 +41,6 @@ Regular expression is a special sublanguage to make searches through strings eas
         
 ## Search
 
-[Code](https://coding4medicine.com/code-all/codes/concept21a.html) -
 
 ~~~~~~~~
 import re
@@ -57,9 +56,6 @@ else:
 
 The above code searches for three letter patterns within the sentence, where
 the first and third letter can be 'a-z', but the middle letter is 'a'.
-
-[Code](https://coding4medicine.com/code-all/codes/concept21b.html) -
-
 
 ~~~~~~~~
 import re
@@ -77,9 +73,6 @@ else:
 ## Search and Replace
 
 
-[Code](https://coding4medicine.com/code-all/codes/concept21c.html) -
-
-
 ~~~~~~~~
 import re
 
@@ -95,14 +88,13 @@ print "count of A =", diff
 The sub command replaces "Seattle" with "London" in the following example.
 
 
-[Code](https://coding4medicine.com/code-all/codes/concept21d.html) -
-
-~~~~~~
+~~~~~~~~
 import re
 str = 'I am flying from Seattle to San Francisco'
 x = re.sub(r'Seattle', 'London', str)
 print x
-~~~~~~
+~~~~~~~~
+
 
 
 ## References

@@ -3,17 +3,16 @@
 
 A> ## In a nutshell
 A>
-A> 1. Unlike PERL, statements in Python programs do not end with semicolons.
-A>
-A> 2. The 'print' statement in Python always adds a newline at the end of output.
-A>
-A> ## Simple Steps to Convert PERL Programs to Python
+A> Here are the simple steps to convert PERL scripts to Python.
 A>
 A> 1. Remove all ';' at the end of the line.
 A>
 A> 2. Remove all curly brackets and adjust indentation.
 A>
 A> 3. Convert variables names from $x, %x or @x to x.
+A>
+A> 4. Remember that the 'print' statement in Python always adds a newline at the end of output.
+A>
 
 
 In the previous chapter, you learned about the shared history of PERL and Python. Here you will see how similar the codes written in two languages are based on three examples. You will learn how to move easily from PERL to Python by making three simple changes in the code structure.

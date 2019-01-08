@@ -64,8 +64,6 @@ http://nvie.com/posts/iterators-vs-generators/
 
 [All codes here](https://coding4medicine.com/code-all/codes/concept20a.html).
 
-
-
 ~~~~~~~~
 a=iter(range(5))
 print a.next()

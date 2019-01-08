@@ -49,7 +49,6 @@ print y
 
 https://docs.python.org/2/library/string.html
 
-[All codes here](https://coding4medicine.com/code-all/codes/concept11a.html).
 
 ## Python String is a List
 

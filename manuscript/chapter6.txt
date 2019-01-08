@@ -55,15 +55,16 @@ block of code and returns the result. That way your code stays small and readabl
 Apart from the in-built functions Python provides you with, you can also create your
 own functions.  Here is an example.
 
-[Code](https://coding4medicine.com/code-all/codes/concept18a.html) -
 
-~~~~~~~
+
+~~~~~~~~
 def square(x):
 	return x*x
 
 print square(2)
 print square(3)
-~~~~~~~
+
+~~~~~~~~
 
 
 The keyword 'def' gives name to a function, and the variables within the
@@ -81,8 +82,8 @@ We need to also make clear that your main code consists of all lines after exclu
 blocks.  The standard linear flow of execution from top to bottom does not hold for the
 functions. Let us illustrate the point with two codes.
 
-[Code 1](https://coding4medicine.com/code-all/codes/concept18b.html) -
-~~~~~~~
+
+~~~~~~~~
 i=2
 j=3
 
@@ -92,11 +93,11 @@ def square(x):
 
 print square(i)
 print square(j)
-~~~~~~~
+~~~~~~~~
 
-[Code 2](https://coding4medicine.com/code-all/codes/concept18c.html) -
 
-~~~~~~~
+
+~~~~~~~~
 def square(x):
 	print "inside",i,j
 	return x*x
@@ -105,7 +106,8 @@ i=2
 j=3
 print square(i)
 print square(j)
-~~~~~~~
+~~~~~~~~
+
 
 You will see that both produce the same output. You may find that odd, because i and j are not defined
 before the function in the second case. How does the function know their values?
@@ -116,16 +118,15 @@ are already defined by the time the function square is called.
 
 ## Default Parameter
 
-[Code](https://coding4medicine.com/code-all/codes/concept18d.html) -
-
-~~~~~~~
+~~~~~~~~
 def square(x=1):
 	return x*x
 
 print square()
 print square(2)
 print square(3)
-~~~~~~~
+~~~~~~~~
+
 
 The above code gives default value of 1 to the parameter x. When the function square() is 
 called without any number, Python uses the default value to print 1*1.
